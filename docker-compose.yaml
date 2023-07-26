@@ -1,0 +1,8 @@
+services:
+  bng-credits-estimator:
+    build:
+      context: .
+      target: production
+    image: bng-credits-estimator
+    container_name: bng-credits-estimator
+    environment: []

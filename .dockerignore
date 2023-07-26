@@ -1,0 +1,16 @@
+.dockerignore
+.snyk
+.vscode
+.vs
+.gitignore
+node_modules
+npm-debug.log
+Dockerfile
+docs
+helm
+docker-compose*
+LICENCE
+README.md 
+jsconfig.json
+test-output
+app/assets/dist/

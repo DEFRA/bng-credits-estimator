@@ -1,0 +1,51 @@
+{% extends "govuk/template.njk" %}
+
+{% block head %}
+  <% htmlWebpackPlugin.files.css.forEach(file => { %>
+  <link href="<%= file.replace('../assets/dist', 'static') %>" rel="stylesheet">
+  <% }) %>
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    containerClasses: "govuk-width-container",
+    serviceName: serviceName,
+    serviceUrl: "/"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/",
+          text: "Privacy"
+        },
+        {
+          href: "/",
+          text: "Cookies"
+        },
+        {
+          href: "/",
+          text: "Accessibility statement"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+<% htmlWebpackPlugin.files.js.forEach(file => { %>
+  <script src="<%= file.replace('../assets/dist', 'static') %>"></script>
+<% }) %>
+{% endblock %}

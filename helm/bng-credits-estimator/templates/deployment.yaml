@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "bng-credits-estimator.deployment") -}}
+{{- define "bng-credits-estimator.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "bng-credits-estimator.container") }}
+{{- end -}}
