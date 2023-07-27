@@ -1,0 +1,3 @@
+{{- include "ffc-helm-library.azure-ingress" (list . "bng-credits-estimator.ingress") -}}
+{{- define "bng-credits-estimator.ingress" -}}
+{{- end -}}

@@ -15,7 +15,15 @@ containerSecret:
   name: bng-credits-estimator-container-secret
   type: Opaque
 
-deployment: {}
+deployment:
+  cpuThreshold: 80
+  memoryThreshold: 80
+  minReadySeconds: 0
+  minReplicas: 1
+  maxReplicas: 2
+  priorityClassName: high
+  replicas: 1
+  restartPolicy: Always
 
 container:
   requestMemory: 100Mi
@@ -23,6 +31,11 @@ container:
   limitMemory: 100Mi
   limitCpu: 100m
   port: 3000
+
+ingress:
+  class: nginx
+  endpoint: bng-credits-estimator
+  server: example.com
 
 livenessProbe:
   path: /healthz
