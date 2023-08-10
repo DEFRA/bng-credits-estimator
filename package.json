@@ -23,6 +23,7 @@
     "@hapi/hapi": "21.3.2",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.2",
+    "@hapi/yar": "^11.0.1",
     "govuk-frontend": "^4.7.0",
     "joi": "^17.9.2",
     "nunjucks": "^3.2.4"

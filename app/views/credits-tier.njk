@@ -1,0 +1,136 @@
+{% extends '_layout.njk' %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set creditText="Enter credit unit" %}
+
+{% block content %}
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Add statutory biodiversity credit units</h1> 
+          <p class="govuk-body">Enter the credit unit from the Metric into the relevant tier box below. You can choose more than one tier.</p>
+          <p class="govuk-hint">The credit unit must be entered up to two decimal places, like 23.75.</p>
+          <form method="POST" autocomplete="off" novalidate="novalidate">      
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <span class="govuk-caption-m">Area</span>
+                <h2 class="govuk-heading-l">Tier A</h2>
+                {{ govukInput({
+                  id: "a1-units",
+                  name: "a1",  
+                  value: a1,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "A1",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.a1
+                }) }}
+                {{ govukInput({
+                  id: "a2-units",
+                  name: "a2",  
+                  value: a2,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "A2",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.a2
+                }) }}
+                {{ govukInput({
+                  id: "a3-units",
+                  name: "a3",  
+                  value: a3,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "A3",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.a3
+                }) }}
+                {{ govukInput({
+                  id: "a4-units",
+                  name: "a4",  
+                  value: a4,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "A4",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.a4
+                }) }}
+                {{ govukInput({
+                  id: "a5-units",
+                  name: "a5",  
+                  value: a5,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "A5",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.a5
+                }) }}
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <span class="govuk-caption-m">Headgerow</span>
+                <h2 class="govuk-heading-l">Tier H</h2>
+                {{ govukInput({
+                  id: "h-units",
+                  name: "h",
+                  value: h,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "H1",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.h
+                }) }}
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <span class="govuk-caption-m">Watercourse</span>
+                <h2 class="govuk-heading-l">Tier W</h2>
+                {{ govukInput({
+                  id: "w-units",
+                  name: "w",
+                  value: w,
+                  classes: "govuk-input--width-5",
+                  label: {
+                    text: "W1",
+                    classes: "govuk-!-font-weight-bold"
+                  },
+                  hint: {
+                    text: creditText
+                  },
+                  errorMessage: errorMessages.w
+                }) }}
+              </div>
+            </div>
+            {{ govukButton({
+              text: "Continue"        
+            }) }}
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+{% endblock %}

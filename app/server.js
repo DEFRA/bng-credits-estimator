@@ -18,8 +18,17 @@ async function createServer () {
   }
 
   const server = hapi.server(serverOptions)
-
   // Register the plugins
+  await server.register({
+    plugin: require('@hapi/yar'),
+    options: {
+      storeBlank: false,
+      cookieOptions: {
+        password: 'thisisnotarealpasswordthisisnotarealpassword',
+        isSecure: false
+      }
+    }
+  })
   await server.register(require('@hapi/inert'))
   await server.register(require('./plugins/views'))
   await server.register(require('./plugins/router'))
